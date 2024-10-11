@@ -1,5 +1,7 @@
+// src/components/ForecastDisplay.js
+
 import React from 'react';
-import './ForecastDisplay.css'; 
+import '../styles/ForecastDisplay.css'; // Updated import path
 
 function ForecastDisplay({ forecastData }) {
   if (!forecastData) return null;
