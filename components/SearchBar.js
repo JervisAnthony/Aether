@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SearchBar.css'; // Create this file for search bar styles
+import './SearchBar.css'; 
 
 function SearchBar({ onSearch }) {
   const [location, setLocation] = useState('');
