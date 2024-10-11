@@ -1,0 +1,18 @@
+/* src/styles/Header.css */
+
+.header {
+  background: linear-gradient(to right, #6dd5fa, #ffffff);
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
