@@ -1,5 +1,5 @@
 import React from 'react';
-import './WeatherDisplay.css'; // Create this file for weather display styles
+import './WeatherDisplay.css'; 
 
 function WeatherDisplay({ weatherData }) {
   if (!weatherData) return null;
