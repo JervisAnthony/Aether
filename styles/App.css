@@ -1,4 +1,4 @@
-/* styles/styles.css */
+/* src/styles/App.css */
 
 body {
   margin: 0;
@@ -12,4 +12,10 @@ body {
   display: flex;
   flex-direction: column;
   padding-bottom: 60px; /* To prevent content from being hidden behind the fixed footer */
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
 }
