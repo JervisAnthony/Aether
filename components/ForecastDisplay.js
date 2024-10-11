@@ -1,5 +1,5 @@
 import React from 'react';
-import './ForecastDisplay.css'; // Create this file for forecast styles
+import './ForecastDisplay.css'; 
 
 function ForecastDisplay({ forecastData }) {
   if (!forecastData) return null;
