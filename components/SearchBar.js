@@ -1,5 +1,7 @@
+// src/components/SearchBar.js
+
 import React, { useState } from 'react';
-import './SearchBar.css'; 
+import '../styles/SearchBar.css'; // Updated import path
 
 function SearchBar({ onSearch }) {
   const [location, setLocation] = useState('');
