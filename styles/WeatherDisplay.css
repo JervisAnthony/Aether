@@ -1,0 +1,23 @@
+/* src/styles/WeatherDisplay.css */
+
+.weather-display {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.temperature {
+  font-size: 4em;
+  margin: 10px 0;
+}
+
+.description {
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+
+.additional-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
