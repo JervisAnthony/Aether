@@ -1,21 +1,32 @@
 // src/components/WeatherDisplay.js
 
 import React from 'react';
-import '../styles/WeatherDisplay.css'; // Updated import path
+import '../styles/WeatherDisplay.css';
 
 function WeatherDisplay({ weatherData }) {
   if (!weatherData) return null;
 
-  const { name, main, weather, wind } = weatherData;
+  const {
+    cityName,
+    temperature,
+    weatherText,
+    weatherIcon,
+    humidity,
+    windSpeed,
+  } = weatherData;
+
+  const iconNumber = String(weatherIcon).padStart(2, '0'); // Ensure two-digit format
+  const iconUrl = `https://developer.accuweather.com/sites/default/files/${iconNumber}-s.png`;
 
   return (
     <div className="weather-display">
-      <h2>{name}</h2>
-      <p className="temperature">{Math.round(main.temp)}°C</p>
-      <p className="description">{weather[0].description}</p>
+      <h2>{cityName}</h2>
+      <img src={iconUrl} alt={weatherText} />
+      <p className="temperature">{Math.round(temperature)}°C</p>
+      <p className="description">{weatherText}</p>
       <div className="additional-info">
-        <p>Humidity: {main.humidity}%</p>
-        <p>Wind: {wind.speed} m/s</p>
+        <p>Humidity: {humidity}%</p>
+        <p>Wind: {windSpeed} km/h</p>
       </div>
     </div>
   );
