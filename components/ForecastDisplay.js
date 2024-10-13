@@ -1,7 +1,7 @@
 // src/components/ForecastDisplay.js
 
 import React from 'react';
-import '../styles/ForecastDisplay.css'; // Updated import path
+import '../styles/ForecastDisplay.css';
 
 function ForecastDisplay({ forecastData }) {
   if (!forecastData) return null;
@@ -10,13 +10,25 @@ function ForecastDisplay({ forecastData }) {
     <div className="forecast-display">
       <h3>5-Day Forecast</h3>
       <div className="forecast-cards">
-        {forecastData.map((day) => (
-          <div key={day.dt} className="forecast-card">
-            <p>{new Date(day.dt * 1000).toLocaleDateString()}</p>
-            <p>{Math.round(day.temp.day)}°C</p>
-            <p>{day.weather[0].description}</p>
-          </div>
-        ))}
+        {forecastData.map((day) => {
+          const date = new Date(day.Date).toLocaleDateString();
+          const maxTemp = Math.round(day.Temperature.Maximum.Value);
+          const minTemp = Math.round(day.Temperature.Minimum.Value);
+          const iconNumber = String(day.Day.Icon).padStart(2, '0');
+          const iconUrl = `https://developer.accuweather.com/sites/default/files/${iconNumber}-s.png`;
+          const description = day.Day.IconPhrase;
+
+          return (
+            <div key={day.Date} className="forecast-card">
+              <p>{date}</p>
+              <img src={iconUrl} alt={description} />
+              <p>
+                {maxTemp}°C / {minTemp}°C
+              </p>
+              <p>{description}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
